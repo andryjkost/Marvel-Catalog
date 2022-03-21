@@ -1,11 +1,13 @@
 package com.example.exampl_r;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -14,8 +16,11 @@ import android.app.SearchManager;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,9 +50,14 @@ public class MainActivity extends AppCompatActivity {
         numberList.setLayoutManager(layoutManager);
         numberList.setHasFixedSize(true);
         //саоздание массива данных
+        mass = new ArrayList<String>();
+        mass.add("s");
+        mass.add("ewew");
+        mass.add("sadasds");
+        mass.add("H2SO4");
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://rawgit.com/startandroid/data/master/messages/")
+                .baseUrl("https://raw.githubusercontent.com/akabab/superhero-api/master/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         MessagesApi messagesApi = retrofit.create(MessagesApi.class);
@@ -55,17 +65,21 @@ public class MainActivity extends AppCompatActivity {
         messages.enqueue(new Callback<List<Message>>() {
             @Override
             public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
-                System.out.println(response.body().get(2));
+                List<Message> message = response.body();
+                for(Message mes:message){
+                    mass.add(mes.getName());
+                }
+
 
 
             }
-
             @Override
             public void onFailure(Call<List<Message>> call, Throwable t) {
                 System.out.println(t.getCause());
 
             }
         });
+
 
 
         //обработка поиска формул
@@ -83,14 +97,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //использование ресайкла
-        mass = new ArrayList<String>();
-        mass.add("s");
-        mass.add("ewew");
-        mass.add("sadasds");
-        mass.add("H2SO4");
+
         numbersAdapter = new NumbersAdapter(this, mass);
         numberList.setAdapter(numbersAdapter);
-
+        System.out.println(mass);
 
     }
 

@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface MessagesApi {
-    @GET("messages1.json")
+    @GET("all.json")
     Call<List<Message>> messages();
 }

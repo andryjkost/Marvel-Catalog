@@ -102,22 +102,48 @@ public class Element extends AppCompatActivity {
                                 card_hero.setVisibility(View.INVISIBLE);
                                 name_hero.setText(new_element);
                                 powerstats_biography.setText("Powerstats");
-                                powerstats_biography_text.setText("Intelligence: " + mes.getPowerstats().getIntelligence().toString() + "\n"
-                                + "strength: " + mes.getPowerstats().getStrength().toString() + "\n"
-                                + "speed: " + mes.getPowerstats().getSpeed().toString() + "\n"
-                                + "durability: " + mes.getPowerstats().getDurability().toString() + "\n"
-                                + "power: " + mes.getPowerstats().getPower().toString() + "\n"
-                                + "combat: " + mes.getPowerstats().getCombat());
+                                powerstats_biography_text.setText("INTELLIGENCE: " + mes.getPowerstats().getIntelligence().toString() + "\n"
+                                + "STRENGTH: " + mes.getPowerstats().getStrength().toString() + "\n"
+                                + "SPEED: " + mes.getPowerstats().getSpeed().toString() + "\n"
+                                + "DURABILITY: " + mes.getPowerstats().getDurability().toString() + "\n"
+                                + "POWER: " + mes.getPowerstats().getPower().toString() + "\n"
+                                + "COMBAT: " + mes.getPowerstats().getCombat());
                                 appearance_work.setText("Appearance");
-                                appearance_work_text.setText("gender: " + mes.getAppearance().getGender() + "\n"
-                                + "race: " + mes.getAppearance().getRace() + "\n"
-                                + "eyeColor: " + mes.getAppearance().getEyeColor() + "\n"
-                                + "hairColor" + mes.getAppearance().getHairColor());
+                                appearance_work_text.setText("GENDER: " + mes.getAppearance().getGender() + "\n"
+                                + "RACE: " + mes.getAppearance().getRace() + "\n"
+                                + "EYE COLOR: " + mes.getAppearance().getEyeColor() + "\n"
+                                + "HAIR COLOR: " + mes.getAppearance().getHairColor());
                                 physics_connections.setText("Physics");
-                                physics_connections_text.setText("Height: " + mes.getAppearance().getHeight().toString() + "\n"
-                                + "Weight: " + mes.getAppearance().getWeight().toString());
+                                physics_connections_text.setText("HEIGHT: " + mes.getAppearance().getHeight().toString() + "\n"
+                                + "WEIGHT: " + mes.getAppearance().getWeight().toString());
                                 break;
 
+                            }
+                        }
+
+                    }
+                });
+                second_icon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        List<Message> message = response.body();
+                        for (Message mes : message){
+                            if (mes.getName().equals(new_element)){
+                                linear_all.setVisibility(View.VISIBLE);
+                                card_hero.setVisibility(View.INVISIBLE);
+                                powerstats_biography.setText("Biography");
+                                powerstats_biography_text.setText("FULLNAME: " + mes.getBiography().getFullName() + "\n"
+                                + "ALIASES: " + mes.getBiography().getAliases().toString() + "\n"
+                                + "PLACE OF BIRTH: " + mes.getBiography().getPlaceOfBirth() + "\n"
+                                + "FIRST APPEARANCE: " + mes.getBiography().getFirstAppearance() + "\n"
+                                + "PUBLISHER: " + mes.getBiography().getPublisher() + "\n"
+                                + "ALIGNMENT: " + mes.getBiography().getAlignment());
+                                appearance_work.setText("Work");
+                                appearance_work_text.setText("OCCUPATION: " + mes.getWork().getOccupation() + "\n"
+                                + "BASE: " + mes.getWork().getBase());
+                                physics_connections.setText("Connections");
+                                physics_connections_text.setText("GROUPAFFILIATION: " + mes.getConnections().getGroupAffiliation() );
+                                break;
                             }
                         }
 

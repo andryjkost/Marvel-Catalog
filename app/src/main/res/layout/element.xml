@@ -40,9 +40,9 @@
     <LinearLayout
         android:id="@+id/linear_all"
         android:layout_width="match_parent"
-        android:layout_height="581dp"
+        android:layout_height="595dp"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="3dp"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/linear_butt"
@@ -57,17 +57,19 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/custom_button3"
+            android:fontFamily="@font/anton"
             android:gravity="center"
             android:textColor="#FBF4F4"
-            android:textSize="28sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/powerstats_biography_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:fontFamily="@font/anton"
             android:textColor="#FBF4F4"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/appearance_work"
@@ -75,17 +77,19 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/custom_button3"
+            android:fontFamily="@font/anton"
             android:gravity="center"
             android:textColor="#FBF4F4"
-            android:textSize="28sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/appearance_work_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:fontFamily="@font/anton"
             android:textColor="#FBF4F4"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/physics_connections"
@@ -93,17 +97,19 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/custom_button3"
+            android:fontFamily="@font/anton"
             android:gravity="center"
             android:textColor="#FBF4F4"
-            android:textSize="28sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/physics_connections_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:fontFamily="@font/anton"
             android:textColor="#FBF4F4"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -114,7 +120,6 @@
         android:layout_margin="10dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="11dp"
         android:layout_marginEnd="23dp"
         android:layout_marginRight="23dp"
         android:layout_marginBottom="16dp"
@@ -165,9 +170,11 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="177dp"
         android:layout_marginRight="177dp"
+        android:fontFamily="@font/anton"
         android:gravity="center"
         android:textColor="#FBF4F4"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linear_all"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

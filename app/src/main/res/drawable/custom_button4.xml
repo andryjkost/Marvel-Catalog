@@ -4,7 +4,7 @@
         <shape android:shape="oval">
             <corners android:radius="30dp">
             </corners>
-            <stroke android:width="6dp" android:color="#FBF4F4">
+            <stroke android:width="7dp" android:color="#FBF4F4">
             </stroke>
         </shape>
     </item>
@@ -12,7 +12,7 @@
         <shape android:shape="oval">
             <corners android:radius="30dp">
             </corners>
-            <stroke android:width="6dp" android:color="#FBF4F4">
+            <stroke android:width="7dp" android:color="#FBF4F4">
             </stroke>
         </shape>
     </item>
@@ -20,7 +20,7 @@
         <shape android:shape="oval">
             <corners android:radius="30dp">
             </corners>
-            <stroke android:width="4dp" android:color="#FBF4F4">
+            <stroke android:width="5dp" android:color="#FBF4F4">
             </stroke>
         </shape>
     </item>

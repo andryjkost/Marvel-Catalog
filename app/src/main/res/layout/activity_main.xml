@@ -11,6 +11,7 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view1"
+        style="@android:style/Widget.Holo.DropDownItem"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginLeft="10dp"
@@ -18,7 +19,12 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/custom_button1"
-        android:inputType="text" />
+        android:inputType="text"
+        app:closeIcon="@android:drawable/ic_menu_close_clear_cancel"
+        app:searchHintIcon="@android:drawable/ic_menu_search"
+        app:theme="@style/SearchViewStyle"
+        app:searchIcon="@android:drawable/ic_menu_search" />
+
 
 
     <androidx.recyclerview.widget.RecyclerView

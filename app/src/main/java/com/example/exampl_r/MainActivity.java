@@ -10,6 +10,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.app.SearchManager;
@@ -33,12 +34,14 @@ public class MainActivity extends AppCompatActivity {
     NumbersAdapter numbersAdapter;
     public ArrayList<String> mass;
     public androidx.appcompat.widget.SearchView searchView;
+    LinearLayout mainLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //создание анимации заднего фона
-        LinearLayout mainLayout = findViewById(R.id.mainLayout);
+        mainLayout= findViewById(R.id.mainLayout);
         AnimationDrawable animationDrawable = (AnimationDrawable) mainLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2500);
         animationDrawable.setExitFadeDuration(5000);
@@ -46,29 +49,40 @@ public class MainActivity extends AppCompatActivity {
         //создание ресайкла
         numberList = findViewById(R.id.rv_numbers);
         searchView = findViewById(R.id.search_view1);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        numberList.setLayoutManager(layoutManager);
-        numberList.setHasFixedSize(true);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        //numberList.setLayoutManager(layoutManager);
+        //numberList.setHasFixedSize(true);
         //саоздание массива данных
-        mass = new ArrayList<String>();
-        mass.add("s");
-        mass.add("ewew");
-        mass.add("sadasds");
-        mass.add("H2SO4");
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/akabab/superhero-api/master/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit.Builder builder = new Retrofit.Builder().baseUrl("https://raw.githubusercontent.com/akabab/superhero-api/master/api/").addConverterFactory(GsonConverterFactory.create());
+        Retrofit retrofit = builder.build();
         MessagesApi messagesApi = retrofit.create(MessagesApi.class);
         Call<List<Message>> messages = messagesApi.messages();
         messages.enqueue(new Callback<List<Message>>() {
             @Override
             public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
+                mass = new ArrayList<String>();
                 List<Message> message = response.body();
                 for(Message mes:message){
                     mass.add(mes.getName());
                 }
+                LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+                numberList.setLayoutManager(layoutManager);
+                numberList.setHasFixedSize(true);
+                numbersAdapter = new NumbersAdapter(getApplicationContext(), mass);
+                numberList.setAdapter(numbersAdapter);
+                searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String query) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String newText) {
+                        filter(newText);
+                        return true;
+                    }
+                });
 
 
 
@@ -98,9 +112,9 @@ public class MainActivity extends AppCompatActivity {
 
         //использование ресайкла
 
-        numbersAdapter = new NumbersAdapter(this, mass);
-        numberList.setAdapter(numbersAdapter);
-        System.out.println(mass);
+        //numbersAdapter = new NumbersAdapter(this, mass);
+        //numberList.setAdapter(numbersAdapter);
+        //System.out.println(mass);
 
     }
 
@@ -115,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         }
         numbersAdapter.filterList(moment_list);
     }
+
 
 
 }

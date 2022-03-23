@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
 
-    private static final String BASE_URL = "";
+    private static final String BASE_URL = "https://raw.githubusercontent.com/akabab/superhero-api/master/api/";
 
     private static Retrofit.Builder builder =
             new Retrofit.Builder()

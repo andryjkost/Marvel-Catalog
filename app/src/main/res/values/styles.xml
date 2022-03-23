@@ -2,9 +2,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">#120101</item>
+        <item name="colorPrimaryDark">#030109</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColor">#FBF4F4</item>
+        <item name="android:editTextColor">#FBF4F4</item>
+        <item name="android:textColorHint">#FBF4F4</item>
     </style>
 
 </resources>

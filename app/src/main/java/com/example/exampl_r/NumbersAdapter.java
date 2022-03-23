@@ -63,6 +63,7 @@ public class NumbersAdapter extends RecyclerView.Adapter<NumbersAdapter.NumberVi
                 public void onClick(View v) {
                     Intent i = new Intent(v.getContext(), Element.class);
                     i.putExtra("new_element", mass.get(getAdapterPosition()));
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     v.getContext().startActivity(i);
                 }
             });

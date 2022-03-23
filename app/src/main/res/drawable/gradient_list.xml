@@ -2,15 +2,15 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:drawable="@drawable/dinamic_background1"
-        android:duration="5000"
+        android:duration="10000"
         />
     <item
         android:drawable="@drawable/dinamic_background2"
-        android:duration="5000"
+        android:duration="10000"
         />
     <item
         android:drawable="@drawable/dinamic_background3"
-        android:duration="5000"
+        android:duration="10000"
         />
 
 </animation-list>

@@ -7,34 +7,122 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_list">
 
-    <FrameLayout
-        android:id="@+id/frame"
-        android:layout_width="370dp"
-        android:layout_height="600dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageButton
+        android:id="@+id/go_home"
+        android:layout_width="55dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="349dp"
+        android:layout_marginRight="349dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/custom_button3"
+        app:layout_constraintBottom_toTopOf="@+id/linear_all"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_navigate_before_24"
+        tools:ignore="VectorDrawableCompat" />
 
-    </FrameLayout>
+    <ImageView
+        android:id="@+id/card_hero"
+        android:layout_width="340dp"
+        android:layout_height="490dp"
+        android:background="@drawable/custom_button3"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linear_butt"
+        app:layout_constraintEnd_toEndOf="@+id/linear_all"
+        app:layout_constraintStart_toStartOf="@+id/linear_all"
+        app:layout_constraintTop_toBottomOf="@+id/name_hero"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linear_all"
+        android:layout_width="match_parent"
+        android:layout_height="581dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="7dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linear_butt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_hero">
+
+        <TextView
+            android:id="@+id/powerstats_biography"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button3"
+            android:gravity="center"
+            android:textColor="#FBF4F4"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/powerstats_biography_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="#FBF4F4"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/appearance_work"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button3"
+            android:gravity="center"
+            android:textColor="#FBF4F4"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/appearance_work_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="#FBF4F4"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/physics_connections"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button3"
+            android:gravity="center"
+            android:textColor="#FBF4F4"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/physics_connections_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="#FBF4F4"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_butt"
         android:layout_width="378dp"
         android:layout_height="68dp"
         android:layout_margin="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="16dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/frame"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/linear_all">
 
         <ImageButton
             android:id="@+id/first_icon"
@@ -43,7 +131,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/custom_button2"
-            app:srcCompat="@drawable/ic_baseline_sort_by_alpha_24"
+            app:srcCompat="@drawable/ic_baseline_change_history_24"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageButton
@@ -53,7 +141,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/custom_button2"
-            app:srcCompat="@drawable/ic_baseline_sort_by_alpha_24"
+            app:srcCompat="@drawable/ic_baseline_check_box_outline_blank_24"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageButton
@@ -63,46 +151,26 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/custom_button2"
-            app:srcCompat="@drawable/ic_baseline_sort_by_alpha_24"
+            app:srcCompat="@drawable/ic_baseline_panorama_fish_eye_24"
             tools:ignore="VectorDrawableCompat" />
         />
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/last_fragment_b"
+    <TextView
+        android:id="@+id/name_hero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="267dp"
-        android:layout_marginLeft="267dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/custom_button2"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/next_fragment_b"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame"
-        app:srcCompat="@drawable/ic_baseline_navigate_before_24"
-        tools:ignore="VectorDrawableCompat" />
-
-    <ImageButton
-        android:id="@+id/next_fragment_b"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginRight="45dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/custom_button2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginRight="177dp"
+        android:gravity="center"
+        android:textColor="#FBF4F4"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/linear_all"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/last_fragment_b"
-        app:layout_constraintTop_toBottomOf="@+id/frame"
-        app:srcCompat="@drawable/ic_baseline_navigate_next_24"
-        tools:ignore="VectorDrawableCompat" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

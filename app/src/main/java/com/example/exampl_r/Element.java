@@ -111,8 +111,8 @@ public class Element extends AppCompatActivity {
                                 + "EYE COLOR: " + mes.getAppearance().getEyeColor() + "\n"
                                 + "HAIR COLOR: " + mes.getAppearance().getHairColor());
                                 physics_connections.setText("Physics");
-                                physics_connections_text.setText("HEIGHT: " + mes.getAppearance().getHeight().toString() + "\n"
-                                + "WEIGHT: " + mes.getAppearance().getWeight().toString());
+                                physics_connections_text.setText("HEIGHT: " + mes.getAppearance().getHeight().get(0) + " " + mes.getAppearance().getHeight().get(1)+ "\n"
+                                + "WEIGHT: " + mes.getAppearance().getWeight().get(0) + " " + mes.getAppearance().getWeight().get(1));
                                 break;
 
                             }
@@ -130,7 +130,7 @@ public class Element extends AppCompatActivity {
                                 card_hero.setVisibility(View.INVISIBLE);
                                 powerstats_biography.setText("Biography");
                                 powerstats_biography_text.setText("FULLNAME: " + mes.getBiography().getFullName() + "\n"
-                                + "ALIASES: " + mes.getBiography().getAliases().toString() + "\n"
+                                + "ALIASES: " + mes.getBiography().getAliases() + "\n"
                                 + "PLACE OF BIRTH: " + mes.getBiography().getPlaceOfBirth() + "\n"
                                 + "FIRST APPEARANCE: " + mes.getBiography().getFirstAppearance() + "\n"
                                 + "PUBLISHER: " + mes.getBiography().getPublisher() + "\n"

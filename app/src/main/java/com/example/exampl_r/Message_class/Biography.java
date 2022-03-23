@@ -18,8 +18,13 @@ public class Biography {
         this.fullName = fullName;
     }
 
-    public ArrayList<String> getAliases() {
-        return aliases;
+    public StringBuilder getAliases() {
+        StringBuilder allAliases = new StringBuilder();
+        for (String el : aliases){
+            allAliases.append(el).append(", ");
+        }
+        allAliases.setCharAt(allAliases.length() - 2, '.');
+        return allAliases;
     }
 
     public void setAliases(ArrayList<String> aliases) {

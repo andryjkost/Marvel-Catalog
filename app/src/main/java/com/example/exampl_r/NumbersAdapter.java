@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 
 public class NumbersAdapter extends RecyclerView.Adapter<NumbersAdapter.NumberViewHolder> {
-    private ArrayList<String> mass;//здесь массив элементов химического списка
+    private ArrayList<String> mass;//здесь массив элементов списка героев
     private LayoutInflater layoutInflater;
 
     public NumbersAdapter(Context context, ArrayList<String> mass){

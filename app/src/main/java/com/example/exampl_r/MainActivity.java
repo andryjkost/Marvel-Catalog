@@ -49,11 +49,6 @@ public class MainActivity extends AppCompatActivity {
         //создание ресайкла
         numberList = findViewById(R.id.rv_numbers);
         searchView = findViewById(R.id.search_view1);
-        //LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        //numberList.setLayoutManager(layoutManager);
-        //numberList.setHasFixedSize(true);
-        //саоздание массива данных
-
         Retrofit.Builder builder = new Retrofit.Builder().baseUrl("https://raw.githubusercontent.com/akabab/superhero-api/master/api/").addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder.build();
         MessagesApi messagesApi = retrofit.create(MessagesApi.class);
@@ -94,27 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        //обработка поиска формул
-        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                filter(newText);
-                return true;
-            }
-        });
-
-        //использование ресайкла
-
-        //numbersAdapter = new NumbersAdapter(this, mass);
-        //numberList.setAdapter(numbersAdapter);
-        //System.out.println(mass);
+        
 
     }
 

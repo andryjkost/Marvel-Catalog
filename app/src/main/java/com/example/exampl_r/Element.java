@@ -70,7 +70,7 @@ public class Element extends AppCompatActivity {
         linear_butt = findViewById(R.id.linear_butt);
         card_hero = findViewById(R.id.card_hero);
         go_home = findViewById(R.id.go_home);
-        final String new_element = i.getStringExtra("new_element");
+        final String new_element = i.getStringExtra("new_element");//имя персонажа
         //получаем данные о персонаже
         Retrofit.Builder builder = new Retrofit.Builder().baseUrl("https://raw.githubusercontent.com/akabab/superhero-api/master/api/").addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder.build();
@@ -95,8 +95,8 @@ public class Element extends AppCompatActivity {
                         List<Message> message = response.body();
                         for (Message mes : message){
                             if (mes.getName().equals(new_element)){
-                                linear_all.setVisibility(View.VISIBLE);
                                 card_hero.setVisibility(View.INVISIBLE);
+                                linear_all.setVisibility(View.VISIBLE);
                                 name_hero.setText(new_element);
                                 powerstats_biography.setText("Powerstats");
                                 powerstats_biography_text.setText("INTELLIGENCE: " + mes.getPowerstats().getIntelligence().toString() + "\n"
@@ -126,8 +126,8 @@ public class Element extends AppCompatActivity {
                         List<Message> message = response.body();
                         for (Message mes : message){
                             if (mes.getName().equals(new_element)){
-                                linear_all.setVisibility(View.VISIBLE);
                                 card_hero.setVisibility(View.INVISIBLE);
+                                linear_all.setVisibility(View.VISIBLE);
                                 powerstats_biography.setText("Biography");
                                 powerstats_biography_text.setText("FULLNAME: " + mes.getBiography().getFullName() + "\n"
                                 + "ALIASES: " + mes.getBiography().getAliases() + "\n"

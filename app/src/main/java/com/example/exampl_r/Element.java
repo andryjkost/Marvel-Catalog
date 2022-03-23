@@ -16,10 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.exampl_r.H2SO4.H2SO4_1_1;
-import com.example.exampl_r.H2SO4.H2SO4_1_2;
-import com.example.exampl_r.H2SO4.H2SO4_2_1;
-import com.example.exampl_r.H2SO4.H2SO4_2_2;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

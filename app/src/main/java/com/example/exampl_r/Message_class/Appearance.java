@@ -1,4 +1,4 @@
-package com.example.exampl_r;
+package com.example.exampl_r.Message_class;
 
 import java.util.ArrayList;
 

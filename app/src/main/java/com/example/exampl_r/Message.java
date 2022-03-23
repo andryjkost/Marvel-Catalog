@@ -1,5 +1,12 @@
 package com.example.exampl_r;
 
+import com.example.exampl_r.Message_class.Appearance;
+import com.example.exampl_r.Message_class.Biography;
+import com.example.exampl_r.Message_class.Connections;
+import com.example.exampl_r.Message_class.Images;
+import com.example.exampl_r.Message_class.Powerstats;
+import com.example.exampl_r.Message_class.Work;
+
 public class Message {
     private String name;
     private String slug;

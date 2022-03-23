@@ -1,4 +1,4 @@
-package com.example.exampl_r;
+package com.example.exampl_r.Message_class;
 
 public class Work {
     private String occupation;
